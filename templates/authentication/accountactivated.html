@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tickr - Account Activated</title>
+  <style>
+    body {
+      background: #FBFBFD;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .container {
+      background: #d5d5f8;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    #logo {
+      display: block;
+      margin: 0 auto;
+    }
+
+    h2 {
+      color: #7D4EF5;
+    }
+
+    p {
+      color: #0B0910;
+      line-height: 1.6;
+    }
+
+    .redirect-msg {
+      margin-top: 20px;
+      color: #461AB8;
+    }
+
+    .login-link {
+      color: #461AB8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body style="display: flex;justify-content:center;align-items:center;" >
+  <div class="container">
+    <img src="https://lh3.googleusercontent.com/u/1/drive-viewer/AEYmBYQSeV576e5RJr18ITMLv2AyqPxkyOVZvEsA4sPbUujT0jMMvhpy-Il5V-N6CQ77-ImEmsRwd9AzsT9PT1yFf3VuBv26EQ=w1868-h1072" alt="Tickr Logo" id="logo">
+    <h2>Your Tickr Account Has Been Activated!</h2>
+    <p>Thank you for activating your Tickr account. You will be redirected to the login page shortly.</p>
+    <p class="redirect-msg">If you are not redirected, click <a id="atag" href="{% url 'login' %}" class="login-link">here</a>.</p>
+  </div>
+
+  <script>
+    atag = document.querySelector('#atag')
+    asource = atag.href
+    // Redirect to the login page after 3 seconds
+    setTimeout(function() {
+      window.location.href = `${asource}`;
+    }, 3000);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+{% extends 'base.html'%}
+{% block 'pagetitle'%} Tickr - Pricing {% endblock 'pagetitle'%}
+
+{% block 'stylesheet'%}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/pricing.css'%}"> {% endblock 'stylesheet'%}
+{% block 'main'%}
+<div class="header_spacer"></div>
+<div class="header_spacer"></div>
+
+
+<main>
+    <section class="flex-center">
+        <div class="container flex-center">
+            <div class="flex-center pricing_section-holder">
+                <h1>Our Pricing</h1>
+                <div class="pricing_section flex-center">
+                    <div class="freemium flex-center">
+                        <div class="price">
+
+                            <div class="paid_feature-heading flex-center">
+                                <h1>Freemium</h1>
+                            </div>
+                            <div class="paid_feature flex-start"><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                    height="32" viewBox="0 0 24 24">
+                                    <path fill="#461AB8"
+                                        d="m10 13.6l5.9-5.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-6.6 6.6q-.3.3-.7.3t-.7-.3l-2.6-2.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l1.9 1.9Z" />
+                                </svg>
+                                <p>Unlimited Real time chatting</p>
+                            </div>
+                            <div class="paid_feature flex-start"><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                    height="32" viewBox="0 0 24 24">
+                                    <path fill="#461AB8"
+                                        d="m10 13.6l5.9-5.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-6.6 6.6q-.3.3-.7.3t-.7-.3l-2.6-2.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l1.9 1.9Z" />
+                                </svg>
+                                <p>File uploads upto 512mb</p>
+                            </div>
+                            <div class="paid_feature flex-start"><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                    height="32" viewBox="0 0 24 24">
+                                    <path fill="#461AB8"
+                                        d="m10 13.6l5.9-5.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-6.6 6.6q-.3.3-.7.3t-.7-.3l-2.6-2.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l1.9 1.9Z" />
+                                </svg>
+                                <p>Standard email support</p>
+                            </div>
+
+                        </div>
+                        <div class="flex-center"><button class="btn-filled">Free Forever</button></div>
+
+
+                    </div>
+                    <div class="premium flex-center">
+                        <div class="price">
+                            <div class="paid_feature-heading flex-center">
+                                <h1>Premium</h1>
+                            </div>
+                            <div class="paid_feature flex-start"><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                    height="32" viewBox="0 0 24 24">
+                                    <path fill="#461AB8"
+                                        d="m10 13.6l5.9-5.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-6.6 6.6q-.3.3-.7.3t-.7-.3l-2.6-2.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l1.9 1.9Z" />
+                                </svg>
+                                <p>Includes everything in freemium</p>
+                            </div>
+                            <div class="paid_feature flex-start"><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                    height="32" viewBox="0 0 24 24">
+                                    <path fill="#461AB8"
+                                        d="m10 13.6l5.9-5.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-6.6 6.6q-.3.3-.7.3t-.7-.3l-2.6-2.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l1.9 1.9Z" />
+                                </svg>
+                                <p>File uploads upto 1gb</p>
+                            </div>
+                            <div class="paid_feature flex-start"><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                    height="32" viewBox="0 0 24 24">
+                                    <path fill="#461AB8"
+                                        d="m10 13.6l5.9-5.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-6.6 6.6q-.3.3-.7.3t-.7-.3l-2.6-2.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l1.9 1.9Z" />
+                                </svg>
+                                <p>Priorty email support in 48Hrs</p>
+                            </div>
+                            <div class="paid_feature flex-start"><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                    height="32" viewBox="0 0 24 24">
+                                    <path fill="#461AB8"
+                                        d="m10 13.6l5.9-5.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-6.6 6.6q-.3.3-.7.3t-.7-.3l-2.6-2.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l1.9 1.9Z" />
+                                </svg>
+                                <p>Premium Badge on Profile</p>
+                            </div>
+
+                        </div>
+                        <div class="flex-center"><a class="btn-filled flex-center" href="http://127.0.0.1:8000/payment/499"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24">
+                                    <path fill="#fff"
+                                        d="M13.725 21L7 14v-2h3.5q1.325 0 2.288-.862T13.95 9H6V7h7.65q-.425-.875-1.263-1.437T10.5 5H6V3h12v2h-3.25q.35.425.625.925T15.8 7H18v2h-2.025q-.2 2.125-1.75 3.563T10.5 14h-.725l6.725 7h-2.775Z" />
+                                </svg> 499/month</a></div>
+                    </div>
+                    <div class="premium-plus flex-center">
+                        <div class="price">
+                            <div class="paid_feature-heading flex-center">
+                                <h1>Premium+</h1>
+                            </div>
+                            <div class="paid_feature flex-start"><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                    height="32" viewBox="0 0 24 24">
+                                    <path fill="#461AB8"
+                                        d="m10 13.6l5.9-5.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-6.6 6.6q-.3.3-.7.3t-.7-.3l-2.6-2.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l1.9 1.9Z" />
+                                </svg>
+                                <p>Includes everything in premium</p>
+                            </div>
+                            <div class="paid_feature flex-start"><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                    height="32" viewBox="0 0 24 24">
+                                    <path fill="#461AB8"
+                                        d="m10 13.6l5.9-5.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-6.6 6.6q-.3.3-.7.3t-.7-.3l-2.6-2.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l1.9 1.9Z" />
+                                </svg>
+                                <p>File uploads upto 2gb</p>
+                            </div>
+                            <div class="paid_feature flex-start"><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                    height="32" viewBox="0 0 24 24">
+                                    <path fill="#461AB8"
+                                        d="m10 13.6l5.9-5.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-6.6 6.6q-.3.3-.7.3t-.7-.3l-2.6-2.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l1.9 1.9Z" />
+                                </svg>
+                                <p>Priorty email support in 24Hrs</p>
+                            </div>
+                            <div class="paid_feature flex-start"><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                    height="32" viewBox="0 0 24 24">
+                                    <path fill="#461AB8"
+                                        d="m10 13.6l5.9-5.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-6.6 6.6q-.3.3-.7.3t-.7-.3l-2.6-2.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l1.9 1.9Z" />
+                                </svg>
+                                <p>Premium+ Badge on Profile</p>
+                            </div>
+                            <div class="paid_feature flex-start"><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                    height="32" viewBox="0 0 24 24">
+                                    <path fill="#461AB8"
+                                        d="m10 13.6l5.9-5.9q.275-.275.7-.275t.7.275q.275.275.275.7t-.275.7l-6.6 6.6q-.3.3-.7.3t-.7-.3l-2.6-2.6q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l1.9 1.9Z" />
+                                </svg>
+                                <p>Beta Access to new features</p>
+                            </div>
+                        </div>
+                        <div class="flex-center"><a class="btn-filled flex-center" href="http://127.0.0.1:8000/payment/999"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24">
+                                    <path fill="#fff"
+                                        d="M13.725 21L7 14v-2h3.5q1.325 0 2.288-.862T13.95 9H6V7h7.65q-.425-.875-1.263-1.437T10.5 5H6V3h12v2h-3.25q.35.425.625.925T15.8 7H18v2h-2.025q-.2 2.125-1.75 3.563T10.5 14h-.725l6.725 7h-2.775Z" />
+                                </svg> 999/month</a></div>
+                    </div>
+                </div>
+                <!-- 
+
+                1gb file upload 
+                priorty support
+                beta acess to new features
+                pro badge 
+
+             -->
+            </div>
+
+        </div>
+    </section>
+</main>
+<div class="header_spacer"></div>
+<div class="header_spacer"></div>
+
+{% endblock 'main'%}
+{% block 'javascript'%}
+{% endblock 'javascript'%}

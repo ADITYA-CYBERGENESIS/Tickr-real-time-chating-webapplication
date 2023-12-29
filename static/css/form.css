@@ -1,0 +1,236 @@
+*{
+    border:0px;
+}.form_holder{
+    height: 100vh;
+    flex-direction: column;
+    background: #e7e7f8;
+}
+.logo_form-top{
+    width: 150px;
+    margin-bottom:3vw ;
+}
+.form{
+    background:#d5d5f8;
+    border-radius:15px ;
+    padding: 3vw;
+}
+.form-header{
+    text-align: center;
+    margin-bottom: 1.5vw;
+}
+.form-header h1{
+    margin: 0 auto;
+    color: #26184a;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.input_container label{
+font-size: 1rem;
+font-weight: 400;
+color: #0B0910;
+}
+.form_input{
+    width: 100%;
+    border-radius:5px ;
+    box-shadow: 0 0 10px #7D4EF5;
+    padding:0.5vw 1vw;
+    font-size: 1.2rem;
+    color: #331971;
+    margin-bottom:0.5vw ;
+    min-width: 300px;
+    
+}
+.form_input-pass{
+    width: 90%;
+    font-size: 1.2rem;
+    padding:0.5vw 1vw;
+    border-radius:5px ;
+    
+}
+.pass_input-container{
+    box-shadow: 0 0 10px #7D4EF5;
+    border-radius:5px ;
+    font-size: 1.2rem;
+    color: #331971;
+    margin-bottom:0.5vw;
+    background-color:#fff;
+    min-width: 300px;
+}
+::placeholder{
+    color: #331971;
+}
+.eye{
+    position: relative;
+    width:25px;
+    height: 25px;
+    rotate: 45deg;
+    cursor: pointer;
+    background-color: #37226cd0;
+    border-radius: 100% 0 100% 0;
+    margin-right:15px
+}
+.open::after{
+    content: "";
+    position: relative;
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    border: 2px solid white;
+    top: 5.6px;
+    left: 6px;
+    rotate: -45deg;
+    display: block;
+  animation: eye-opener 0.5s linear;
+
+}
+.closed::after{
+    content: "";
+  position: relative;
+  width: 7px;
+  height: 30px;
+  border: 3px solid white;
+  top: -0.6px;
+  left: 9px;
+  rotate: 0deg;
+  display: block;
+  animation: eye-closer 0.5s linear;
+}
+
+.below_form_footer{
+    margin-top: 0.5vw;
+}
+.form_footer{
+    justify-content: flex-start !important;
+    margin-left: 2px;
+}
+.form_footer p,.form_footer a {
+    font-size: 0.6rem;
+}
+.form_footer-2{
+    margin-top:3px;
+        justify-content: flex-end !important;
+        margin-right: 2px;
+}
+.form_footer-2 a {
+    font-size: 0.85rem;
+}
+
+@keyframes eye-closer {
+    from{
+        width: 13px;
+        height: 13px;
+        border-radius: 100%;
+        border: 2px solid white;
+        top: 5.6px;
+        left: 6px;
+        rotate: -45deg;
+    }
+    to{
+        width: 7px;
+        height: 35px;
+
+        border: 3px solid white;
+        top: -0.6px;
+        left: 9px;
+        rotate: 0deg;
+
+    }
+    
+    
+}
+@keyframes eye-opener {
+    from{
+        width: 7px;
+        height: 35px;
+
+        border: 3px solid white;
+        top: -0.6px;
+        left: 9px;
+        rotate: 0deg;
+
+    }
+    to{
+        width: 13px;
+        height: 13px;
+        border-radius: 100%;
+        border: 2px solid white;
+        top: 5.6px;
+        left: 6px;
+        rotate: -45deg;
+    }
+    
+}
+@media only screen and (max-width: 1000px) {
+    .form{
+        padding:4vw;}
+        .form-header{
+            margin-bottom: 2.2vw;
+        }
+
+        .form_input{
+            padding:0.7vw 1.7vw;
+        }
+        .form_input-pass{
+            padding:0.9vw 1.7vw;
+            
+        }
+        .pass_input-container{
+            margin-bottom:0.9vw;
+        }
+        .below_form_footer{
+            margin-top: 0.8vw;
+        }
+
+}
+@media only screen and (max-width: 750px) {
+    .form{
+        padding:6vw;}
+        .form-header{
+            margin-bottom: 3vw;
+        }
+
+        .form_input{
+            padding:1.3vw 2.5vw;
+        }
+        .form_input-pass{
+            padding:1.5vw 2.5vw;
+            
+        }
+        .pass_input-container{
+            margin-bottom:1.5vw;
+        }
+       
+        .below_form_footer{
+            margin-top: 1vw;
+        }
+
+}
+@media only screen and (max-width: 500px) {
+    .form{
+        padding:8vw;}
+        .form-header{
+            margin-bottom: 3.5vw;
+        }
+
+        .form_input{
+            padding:2vw 3vw;
+        }
+        .form_input-pass{
+            padding:2vw 3vw;
+            
+        }
+        .pass_input-container{
+            margin-bottom:2vw;
+        }
+   
+        .below_form_footer{
+            margin-top: 1.5vw;
+        }
+}
+input:focus {
+    outline: none;
+}
+/* ,
+select:focus,
+textarea:focus,
+button:focus */

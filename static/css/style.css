@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Signika', sans-serif;
+    color: #0B0910;
+    font-weight: 400;
+    font-size: 1rem;
+    border: 0px;
+}
+
+.spacer {
+    height: 100vw;
+    background: #d5d5f8;
+}
+
+body {
+    /* height: 100vh; */
+    width: 100%;
+    background-color: #fce7fc;
+
+}
+
+.dis-none {
+    display: none;
+}
+
+.flex-center {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.flex-start {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: flex-start;
+    -ms-flex-pack: flex-start;
+    justify-content: flex-start;
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    width: 80%;
+    max-width: 1300px;
+}
+.pointer{
+cursor: pointer;
+}
+
+.btn-filled {
+    background-color: #7D4EF5;
+    color: white;
+    /* padding: 1vw 3vw;  */
+    border-radius: 15px;
+    cursor: pointer;
+    border: 0px;
+    padding-right: clamp(15px, 3vw, 50px);
+    padding-left: clamp(15px, 3vw, 50px);
+    padding-top: clamp(15px, 1vw, 50px);
+    padding-bottom: clamp(15px, 1vw, 50px);
+}
+
+.btn-outline {
+    padding-right: clamp(15px, 3vw, 50px);
+    padding-left: clamp(15px, 3vw, 50px);
+    padding-top: clamp(15px, 1vw, 50px);
+    padding-bottom: clamp(15px, 1vw, 50px);
+    border-radius: 15px;
+    color: #7D4EF5;
+    border: 1px solid #7D4EF5;
+    cursor: pointer;
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.blocked_btn {
+    background-color: rgba(37, 23, 72, 0.84);
+    cursor: not-allowed;
+}
+
+.blocked_btn-animation {
+    animation: shake 0.25s linear;
+}
+
+.message {
+    max-width: 320px;
+    border-radius: 15px;
+    padding: 2vw 1vw;
+}
+
+.red {
+    background: rgba(255, 1, 1, 0.493);
+    border: 2px solid red;
+}
+
+.blue {
+    background: rgba(0, 0, 255, 0.379);
+    border: 2px solid rgb(0, 0, 255);
+}
+
+.green {
+    background: rgba(3, 165, 3, 0.425);
+    border: 2px solid green;
+}
+
+.setting-btn {
+    padding-right: clamp(5px, 2vw, 20px);
+    padding-left: clamp(5px, 2vw, 20px);
+    padding-top: clamp(5px, 1vw, 5px);
+    padding-bottom: clamp(5px, 1vw, 5px);
+    border-radius: 5px;
+    /* color: #7D4EF5; */
+    border: 1px solid #dcd1f5;
+    cursor: pointer;
+    background: #e9e9fa;
+    margin:0px 10px;
+}
+.setting-btn-filled{
+    padding-right: clamp(5px, 2vw, 20px);
+    padding-left: clamp(5px, 2vw, 20px);
+    padding-top: clamp(5px, 1vw, 5px);
+    padding-bottom: clamp(5px, 1vw, 5px);
+    border-radius: 5px;
+    /* color: #7D4EF5; */
+    border: 1px solid #dcd1f5;
+    cursor: pointer;
+    background: #e9e9fa;
+    margin:0px 10px;
+    background: #6c48c6;
+}
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-15px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(15px);
+    }
+}
+
+.header_spacer {
+    height: 85px;
+}
+
+@media screen and (max-width:800px) {
+    .btn-filled {
+        padding: 2vw 5vw;
+    }
+
+    .btn-outline {
+        padding: 2vw 5vw;
+    }
+}
+
+
+
+
+@media screen and (max-width:500px) {
+    .btn-filled {
+        padding: 3vw 6vw;
+    }
+
+    .btn-outline {
+        padding: 3vw 6vw;
+    }
+}

@@ -1,0 +1,2 @@
+iframe = document.querySelector('#chatarea')
+

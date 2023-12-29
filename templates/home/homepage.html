@@ -1,0 +1,315 @@
+
+{% extends 'base.html'%}
+{% block 'pagetitle'%}Tickr - Home{% endblock 'pagetitle'%}
+{% block 'stylesheet'%} 
+{% load static %}
+<link rel="stylesheet" href="{%static 'css/home.css'%}">
+{% endblock 'stylesheet'%} 
+{% block 'main'%}
+
+<div class="header_spacer"></div>
+<main>
+    <section class="section-1 flex-center">
+        <div class="container">
+            <div class="poster flex-center">
+                <div class="poster_text">
+                    <h1>Tickr - Your Real-Time Multiverse for Dynamic Conversations!</h1>
+
+                    <p>Connect better than ever with our encrypted chat and group platform—simple, secure, and
+                        multi-device ready!
+                    </p>
+                    <a href="{% url 'register' %}" class="btn-filled ">Get Started For Free</a>
+                </div>
+                <div class="poster_image_holder flex-center">
+                    <div class="poster_image">
+                        <img src="{% static 'images/poster.webp' %}" class="img_poster" alt="poster image">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="section-2 flex-center">
+        <div class="container">
+            <div class="features">
+                <div class="features_heading">
+                    <h1>Why Choose Tickr ?</h1>
+                </div>
+                <div class="features_holder">
+                    <div class="feature">
+                        <h1>Saves Time</h1>
+                        <p>No need to spend time on long verfication process.</p>
+                    </div>
+                    <div class="feature">
+                        <h1>Quick</h1>
+                        <p>
+                            Instantly chat with anyone worldwide—zero wait, zero hassle!</p>
+                    </div>
+                    <div class="feature">
+                        <h1>Its's Simple</h1>
+                        <p>Begin chatting with people you love in just 4 swift steps!</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <section class="section-3 flex-center">
+        <div class="container">
+
+            <div class="steps">
+                <div class="step-1">Zip through registration in a flash – fill out your deets in just 60 seconds!
+                </div>
+                <div class="step-2">Hit the ground running – activate, log in, and let the adventure begin!</div>
+
+            </div>
+            <div class="section-3_heading">
+                <h1>How It Works</h1>
+                <p>Get started with Tickr in just 4 easy steps</p>
+
+            </div>
+            <div class="steps">
+                <div class="step-3">Tailor your space, your way – personalize your account to suit your style and
+                    needs!</div>
+                <div class="step-4">Discover, connect, chat! Find friends with a quick username search and dive into
+                    conversations!</div>
+            </div>
+        </div>
+    </section>
+    <section class="section-4 flex-center">
+        <div class="container">
+            <div class="reviews_section">
+                <div class="flex-center"><h1 class="reviews_heading">What's the buzz about Tickr ?</h1></div>
+                <div class="reviews_holder">
+                    <div class="reviews forward">
+
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Tickr is my go-to messaging app. The sleek design and user-friendly interface
+                                    make
+                                    communication a breeze.</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Neha Sharma</h6>
+                            </div>
+                        </div>
+
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Tickr has simplified my conversations. The quick response time and reliable
+                                    service
+                                    set it apart from other messaging apps.</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Rajesh Patel</h6>
+                            </div>
+                        </div>
+
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Using Tickr has been a game-changer for me. The app's features and intuitive
+                                    design
+                                    make it my top choice.</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Pooja Verma</h6>
+                            </div>
+                        </div>
+
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Tickr is the messaging app I never knew I needed. The customizable themes add a
+                                    personal touch to my chats.</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Arjun Gupta</h6>
+                            </div>
+                        </div>
+
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Tickr's simplicity and reliability are unmatched. The voice messaging feature is
+                                    crystal clear and adds a personal touch to conversations.</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Ananya Singh</h6>
+                            </div>
+                        </div>
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Tickr is my go-to messaging app. The sleek design and user-friendly interface
+                                    make
+                                    communication a breeze.</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Neha Sharma</h6>
+                            </div>
+                        </div>
+
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Tickr has simplified my conversations. The quick response time and reliable
+                                    service
+                                    set it apart from other messaging apps.</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Rajesh Patel</h6>
+                            </div>
+                        </div>
+
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Using Tickr has been a game-changer for me. The app's features and intuitive
+                                    design
+                                    make it my top choice.</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Pooja Verma</h6>
+                            </div>
+                        </div>
+
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Tickr is the messaging app I never knew I needed. The customizable themes add a
+                                    personal touch to my chats.</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Arjun Gupta</h6>
+                            </div>
+                        </div>
+
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Tickr's simplicity and reliability are unmatched. The voice messaging feature is
+                                    crystal clear and adds a personal touch to conversations.</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Ananya Singh</h6>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                    <div class="reviews reverse">
+
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Using Tickr has made communication effortless. The app's user-friendly interface
+                                    and
+                                    quick response time are impressive.</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Vikram Yadav</h6>
+                            </div>
+                        </div>
+
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Tickr is my daily driver. The animated stickers and seamless communication make
+                                    it a
+                                    must-have app!</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Aisha Khan</h6>
+                            </div>
+                        </div>
+
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Tickr's message scheduling feature has made my life more organized. It's the
+                                    perfect
+                                    app for managing conversations efficiently.</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Siddharth Mehta</h6>
+                            </div>
+                        </div>
+
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Using Tickr has been a delightful experience. The app's simplicity and
+                                    functionality
+                                    make it my go-to for messaging.</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Shruti Kapoor</h6>
+                            </div>
+                        </div>
+
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Tickr has exceeded my expectations. The feature-packed app and user-friendly
+                                    interface make it stand out from the rest.</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Rohit Malhotra</h6>
+                            </div>
+                        </div>
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Using Tickr has made communication effortless. The app's user-friendly interface
+                                    and
+                                    quick response time are impressive.</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Vikram Yadav</h6>
+                            </div>
+                        </div>
+
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Tickr is my daily driver. The animated stickers and seamless communication make
+                                    it a
+                                    must-have app!</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Aisha Khan</h6>
+                            </div>
+                        </div>
+
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Tickr's message scheduling feature has made my life more organized. It's the
+                                    perfect
+                                    app for managing conversations efficiently.</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Siddharth Mehta</h6>
+                            </div>
+                        </div>
+
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Using Tickr has been a delightful experience. The app's simplicity and
+                                    functionality
+                                    make it my go-to for messaging.</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Shruti Kapoor</h6>
+                            </div>
+                        </div>
+
+                        <div class="review_box">
+                            <div class="review-desc">
+                                <p>Tickr has exceeded my expectations. The feature-packed app and user-friendly
+                                    interface make it stand out from the rest.</p>
+                            </div>
+                            <div class="reviewer">
+                                <h6>- Rohit Malhotra</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+</main>
+
+{% endblock 'main'%}
+{% block 'javascript'%}
+<script src="{%static 'js/home.js'%}"></script>
+{% endblock 'javascript'%}

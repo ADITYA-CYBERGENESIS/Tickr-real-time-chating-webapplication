@@ -1,0 +1,75 @@
+.pricing_section-holder{
+    flex-direction: column;
+}
+.pricing_section-holder h1{
+    font-size: 3rem;
+    font-weight: 700;
+    color:#1a0a43;
+    margin-bottom:3vw;
+}
+.pricing_section{
+    width:100%;
+    max-width:900px;
+    justify-content: space-between !important;
+    gap:2vw;
+ 
+}.price{
+    align-items: flex-start !important;
+    justify-content: space-between;
+
+}
+.paid_feature p{
+    font-weight: 400;
+    color:#0B0910
+    
+}
+.freemium{
+    border: 3px solid #541fd984;
+    height: 400px;
+    border-radius: 15px;
+    background: #d5d5f8;
+    min-width:280px;
+    padding:1vw 1vw 2vw 1vw;
+    flex-direction:column;
+    justify-content: space-between 
+    !important;
+    
+}
+.premium{
+    border: 3px solid #541fd9c7;
+    height: 400px;
+    border-radius: 15px;
+    background: #d5d5f8;
+    min-width:280px;
+    padding:1vw 1vw 2vw 1vw;
+    flex-direction:column;
+    justify-content: space-between !important;
+    
+}
+.premium-plus{
+    border: 3px solid #461AB8;
+    height: 400px;
+    border-radius: 15px;
+    background: #d5d5f8;
+    min-width:280px;
+    padding:1vw 1vw 2vw 1vw;
+    flex-direction:column;
+    justify-content: space-between !important;
+    
+}
+.paid_feature-heading{
+
+}
+.paid_feature-heading h1{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #392370;
+    margin:1vw 0;
+}
+@media only screen and ( max-width:900px ) {
+    .pricing_section{
+        flex-direction: column !important;
+
+    }
+    
+}

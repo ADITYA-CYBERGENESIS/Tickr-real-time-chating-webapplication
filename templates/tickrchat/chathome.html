@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png'%}">
+    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest'%}">
+    <title>Tickr-chat</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/messagepage1.css'%}">
+</head>
+
+<div class="chat_nav  nav-disnone flex-center">
+    <div class="chat_nav_inner flex-center">
+        <div class="chat_logo_container flex-center pointer">
+            <a href=""><img src="{%  static 'images/logo.png'%}" class="chat-img_logo" alt="logo Tickr"></a>
+        </div>
+        <div class="chat_nav_settings">
+            <a href="{% url 'chathome' %}" class="flex-center pointer">
+                <div class="chat_nav_buttons"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                        viewBox="0 0 256 256">
+                        <path fill=#461AB8
+                            d="M172 108a12 12 0 0 1-12 12H96a12 12 0 0 1 0-24h64a12 12 0 0 1 12 12Zm-12 28H96a12 12 0 0 0 0 24h64a12 12 0 0 0 0-24Zm76-12a104.11 104.11 0 0 1-104 104H47.67A19.69 19.69 0 0 1 28 208.33V124a104 104 0 0 1 208 0Zm-24 0a80 80 0 0 0-160 0v80h80a80.09 80.09 0 0 0 80-80Z" />
+                    </svg></div>
+            </a>
+            <a href="{% url 'groupchathome' %}" class="flex-center pointer">
+                <div class="chat_nav_buttons"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                        viewBox="0 0 24 24">
+                        <path fill=#461AB8
+                            d="M7 5a3 3 0 0 0 0 6v2a5 5 0 0 0-5 5v4H0v-4a7 7 0 0 1 3.75-6.2A5 5 0 0 1 7 3h1v2a4.992 4.992 0 0 1 4-2a4.99 4.99 0 0 1 4 2V3h1a5 5 0 0 1 3.25 8.8A7 7 0 0 1 24 18v4h-2v-4a5 5 0 0 0-5-5v-2a3 3 0 1 0 0-6h-1a5 5 0 1 1-8 0H7Zm5 0a3 3 0 1 0 0 6a3 3 0 0 0 0-6ZM4 19a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v3H4v-3Zm5-3a3 3 0 0 0-3 3v1h12v-1a3 3 0 0 0-3-3H9Z" />
+                    </svg></div>
+            </a>
+            <a href="{% url 'search' %}" class="flex-center pointer">
+                <div class="chat_nav_buttons"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                        viewBox="0 0 24 24">
+                        <path fill=#461AB8
+                            d="M12 12q-1.65 0-2.825-1.175T8 8q0-1.65 1.175-2.825T12 4q1.65 0 2.825 1.175T16 8q0 1.65-1.175 2.825T12 12Zm-8 8v-2.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13q1.65 0 3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20H4Zm2-2h12v-.8q0-.275-.137-.5t-.363-.35q-1.35-.675-2.725-1.012T12 15q-1.4 0-2.775.338T6.5 16.35q-.225.125-.363.35T6 17.2v.8Zm6-8q.825 0 1.413-.587T14 8q0-.825-.587-1.412T12 6q-.825 0-1.412.588T10 8q0 .825.588 1.413T12 10Zm0-2Zm0 10Z" />
+                    </svg> </div>
+            </a>
+        </div>
+    </div>
+    <div class="chat_nav_profile ">
+        <button class="flex-center pointer">
+            <div class="avatar pointer ">
+                {% if request.user.avatar %}
+                    <img src="{{request.user.avatar.url}}" alt="" class="avatar_img pointer">
+                    {% else %}
+                    <img src="{% static 'images/avatar.jpeg' %}" alt="" class="avatar_img pointer">
+                    {% endif %}
+            </div>
+        </button>
+    </div>
+</div>
+
+<div class="chat_sidebar">
+    <div style="border-bottom:1px solid #ac90f4b0;" class="sidebar_head flex-center">
+        <h1>Chats</h1>
+        <a href="{% url 'search' %}" class="" style="cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                viewBox="0 0 24 24">
+                <path fill="#495057"
+                    d="M11.5 12.5V16q0 .213.144.356q.144.144.357.144t.356-.144q.143-.143.143-.356v-3.5H16q.213 0 .356-.144q.144-.144.144-.357t-.144-.356Q16.213 11.5 16 11.5h-3.5V8q0-.213-.144-.356Q12.212 7.5 12 7.5t-.356.144Q11.5 7.788 11.5 8v3.5H8q-.213 0-.356.144q-.144.144-.144.357t.144.356q.144.143.356.143h3.5Zm.503 8.5q-1.866 0-3.51-.708q-1.643-.709-2.859-1.924q-1.216-1.214-1.925-2.856Q3 13.87 3 12.003q0-1.866.708-3.51q.709-1.643 1.924-2.859q1.214-1.216 2.856-1.925Q10.13 3 11.997 3q1.866 0 3.51.708q1.643.709 2.859 1.924q1.216 1.214 1.925 2.856Q21 10.13 21 11.997q0 1.866-.708 3.51q-.709 1.643-1.924 2.859q-1.214 1.216-2.856 1.925Q13.87 21 12.003 21ZM12 20q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20Zm0-8Z" />
+            </svg> <div class="mobilemenubtn" style="cursor: pointer;"> <svg  xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path fill="#461AB8" d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z"/></svg></div></a>
+    </div>
+    <!-- <form>
+        <div class="sidebar_searchbar flex-center">
+            <input type="text" placeholder="search chats here">
+        </div>
+    </form> -->
+    <div class="chat_container">
+        <div class="chat_person_holder">
+            {% for user in users %}
+            <div class="chat_person pointer" style="display: flex;" onclick="(() => {
+                let iframe = document.querySelector('#chatarea');
+                iframe.src = 'http://127.0.0.1:8000/chatwith{{user.other_user.username}}/{{user.other_user.id}}';
+                iframe.classList.remove('dis-none_chat')
+            })()">
+                <input type="text" value="{{user.other_user.username}}" hidden>
+                <input type="text" value="{{user.other_user.id}}" hidden>
+                <div class="avatar pointer " style="border:2px solid #461AB8; box-sizing:content-box; flex-shrink:0;">
+                    {% if user.other_user.avatar %}
+                    <img src="{{user.other_user.avatar.url}}" alt="" class="avatar_img pointer">
+                    {% else %}
+                    <img src="{% static 'images/avatar.jpeg' %}" alt="" class="avatar_img pointer">
+                    {% endif %}
+
+                </div>
+                <div class="profile_container">
+                    <div class="chat_person-nameandtime flex-center">
+                        <h1 class="profile-name">{{ user.other_user.first_name}} {{ user.other_user.last_name}}</h1>
+                        <div class="message_time-other flex-center">
+                            {{user.latest_message.sent_time_12}}
+                        </div>
+                    </div>
+                    <div class="chat_person-message">
+                        {{user.latest_message.message}}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- <div class="chat_person pointer flex-center">
+                <div class="avatar pointer ">
+                    <img src="{%  static 'images/avatar.jpeg'%}" alt="" class="avatar_img pointer">
+                </div>
+                <div class="profile_container">
+                    <div class="chat_person-nameandtime flex-center">
+                        <h1 class="profile-name">Aditya Sonkar</h1>
+                        <div class="message_time-other flex-center">
+                            12:22 PM
+                        </div>
+                    </div>
+                    <div class="chat_person-message">
+                        hi
+                    </div>
+                </div>
+            </div>
+             -->
+        </div>
+    </div>
+
+
+</div>
+<iframe class="dis-none_chat" id="chatarea" src="{% url 'blankchat' %}" scrolling="no" frameborder="0"></iframe>
+<script src="{% static 'js/chatopener.js' %}"></script>
+<script src="{% static 'js/mobilemenuforchat.js' %}"></script>
+<script src="{% static 'js/useronlinestatus.js' %}"></script>
+<script >
+    const ifra = (()=>{
+        iframe.classList.add('dis-none_chat')
+    })
+    
+</script>
+<div style="width:50px;height:80px;border-radius:15px;border:1px solid #461AB8;position:absolute;z-index:1001;background:#e9e9fa; left:50px; bottom:60px;" >
+    <a href="{% url 'logout' %}"> <div style="height: 100%;cursor:pointer;display:flex;justify-content:center;align-items:center;">
+         Logout
+     </div></a>
+ </div>
+</body>
+
+</html>

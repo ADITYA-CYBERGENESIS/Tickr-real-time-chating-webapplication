@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png'%}">
+    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest'%}">
+    <title>{% block 'pagetitle'%} {% endblock 'pagetitle'%}</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">   
+    <link rel="stylesheet" href="{%static 'css/header.css'%}">
+    <link rel="stylesheet" href="{%static 'css/footer.css'%}">
+    {% block 'stylesheet'%}   {% endblock 'stylesheet'%} 
+</head>
+
+<body>
+    <header class="flex-center">
+        <div class="container">
+            <nav class="navbar">
+                <li class="logo_container"><a href="{% url 'home' %}"><img src="{% static 'images/logo.png'%}" class="img_logo" alt="logo - Tickr"></a></li>
+                <ul class="nav_area_container">
+                    <div class="nav_area-1">
+                        <li class="nav_items"><a href="{% url 'home' %}" class="link">Contact us</a></li>
+                        <li class="nav_items"><a href="{% url 'home' %}" class="link">About us</a></li>
+                        <li class="nav_items"><a href="{% url 'pricing' %}" class="link">Pricing</a></li>
+                    </div>
+                    <div class="nav_area-2 dis-none">
+                        <li class="nav_items" id="login_btn-homepage"><a href="{% url 'login' %}" class="link btn-outline">Login</a>
+                        </li>
+                        <li class="nav_items" id="get_started_btn-homepage"><a href="{% url 'register' %}" class="btn-filled">Get
+                                Started</a></li>
+                    </div>
+                    <!-- mobile menu -->
+                    <div class="hamburger_menu flex-center">
+                        <div class="hamburger_bar-1 hamburger_bar"></div>
+                        <div class="hamburger_bar-2 hamburger_bar"></div>
+                        <div class="hamburger_bar-3 hamburger_bar"></div>
+                    </div>
+
+                </ul>
+            </nav>
+
+            <nav class="mobile_nav dis-none">
+                <div class="mobile_nav_area-1">
+                    <li class="mobile_nav_items"><a href="#" class="link">Contact us</a></li>
+                    <li class="mobile_nav_items"><a href="#" class="link">About us</a></li>
+                    <li class="mobile_nav_items"><a href="#" class="link">Pricing</a></li>
+                </div>
+                <div class="mobile_nav_area-2 flex-center">
+                    <li class="mobile_nav_items"><a href="{% url 'login' %}" class="btn-outline mobile_btn-outline">Login</a></li>
+                    <li class="mobile_nav_items"><a href="{% url 'register' %}" class="btn-filled mobile_btn-filled">Get Started</a></li>
+                </div>
+            </nav>
+
+
+            <!-- mobile menu end -->
+
+        </div>
+    </header>
+{% block 'main'%}
+{% endblock 'main'%}
+    <footer class="flex-center">
+        <div class="container">
+            <div class="footer_holder">
+                <div class="footer">
+                    <div class="footer_section-1">
+                        <a href="{% url 'home' %}">
+                        <img src="{% static 'images/logo.png'%}" class="img_logo" alt="logo - Tickr"></a>
+                        <div class="footer_tagline">
+                            Experience the magic of Tickr, where countless ticks converge to create a symphony of
+                            real-time
+                            messaging brilliance.
+                        </div>
+                    </div>
+                    <div class="footer_middle_line"></div>
+                    <hr class="footer_hr-1">
+
+                    <div class="footer_section-2 ">
+                            <div class="tickr ">
+
+                                <h6>Tickr</h6>
+                                <nav>
+                                    <li class="footer_nav_items"><a href="{% url 'login' %}">Login</a></li>
+                                    <li class="footer_nav_items"><a href="{% url 'register' %}">Sign up</a></li>
+                                    <li class="footer_nav_items"><a href="#">Features</a></li>
+                                    <li class="footer_nav_items"><a href="#">Pricing</a></li>
+                                    <li class="footer_nav_items"><a href="#">About us</a></li>
+                                </nav>
+
+                            </div>
+                            <div class="legal_hub">
+                                <h6>Legal hub</h6>
+                                <li class="footer_nav_items"><a href="#">Privacy Policy</a></li>
+                                <li class="footer_nav_items"><a href="#">Terms and Conditions</a></li>
+                                <li class="footer_nav_items"><a href="#">Cookie Policy</a></li>
+                                <li class="footer_nav_items"><a href="#">Sitemap</a></li>
+
+
+                            </div>
+                        
+                        <div class="lets_connect">
+                            <h6>Let's Connect</h6>
+                            <nav>
+                                <li class="footer_nav_items"><a href="#">Twitter</a></li>
+                                <li class="footer_nav_items"><a href="#">Instagram</a></li>
+                                <li class="footer_nav_items"><a href="#">LinkedIn</a></li>
+                                <li class="footer_nav_items"><a href="#">Contact us</a></li>
+                            </nav>
+
+                        </div>
+                    </div>
+
+                </div>
+                <hr class="footer_hr-2">
+                <div class="copyright_strip flex-center">
+                    <p>© 2022 Tickr. All rights reserved.</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    {% block 'javascript'%}
+    {% endblock 'javascript'%}
+    <script src="{% static 'js/mobilemenu.js'%}"></script>
+</body>
+
+</html>

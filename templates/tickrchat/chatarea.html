@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png'%}">
+    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest'%}">
+    <title>Tickr - chat</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/message2.css'%}">
+</head>
+
+<body>
+    <div class="messageheader flex-center">
+        <input type="text" value='{{ user.id }}' hidden id="userid">
+        <input type="text" value='{{ user.username }}' hidden id="senderuname">
+        <input type="text" value='{{ data.username }}' hidden id="receiveruname">
+        <input type="text" value='{{ data.id }}' hidden id="receiverid">
+        <div class="profile flex-center">
+            <div class="avatar " style="border:2px solid #461AB8; box-sizing:content-box;">
+                {% if data.avatar %}
+                    <img src="{{ data.avatar.url }}" alt="" class="avatar_img pointer">
+                    {% else %}
+                    <img src="{% static 'images/avatar.jpeg' %}" alt="" class="avatar_img pointer">
+                    {% endif %}
+            </div>
+            <div class="profile-info flex-center">
+                <h1 class="profile-name">{{ data.first_name }} {{ data.last_name }}</h1>
+                {% if data.is_online %}
+                <p class="profile-seen">Online</p>
+                {% else %}
+                <p class="profile-seen">last seen 5 minutes</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="settings">
+            <button id="crbtn" onclick="(click,()=>{
+                parent.location.reload();;
+            })()" class="setting-btn "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke=red stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg></button>
+            <button class="setting-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke=#0b0910 stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="1"></circle>
+                    <circle cx="19" cy="12" r="1"></circle>
+                    <circle cx="5" cy="12" r="1"></circle>
+                </svg></button>
+        </div>
+    </div>
+    <div class="message_viewing_area">
+        {% if chatmessages %}
+        {% for message in chatmessages %}
+        {% if message.sender.username == user.username %}
+        <div class="message_container-self flex-center">
+            <div class="message-self">
+                <div class="message_content-self flex-center">{{ message.message }}
+                </div>
+                <div class="message_time-self flex-center">{{ message.sent_time_12 }}<svg style="margin-left:2px"
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                        <path fill="none" stroke="#EAE6F3" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1.5" d="m1.75 9.75l2.5 2.5m3.5-4l2.5-2.5m-4.5 4l2.5 2.5l6-6.5" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="message_container-other flex-center">
+            <div class="message-other">
+                <div class="message_sender-other">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24">
+                        <path fill=#0b09106b
+                            d="m4.497 20.835l16.51-7.363c1.324-.59 1.324-2.354 0-2.944L4.497 3.164c-1.495-.667-3.047.814-2.306 2.202l3.152 5.904c.245.459.245 1 0 1.458l-3.152 5.904c-.74 1.388.81 2.87 2.306 2.202Z" />
+                    </svg> {{ message.sender.first_name }} {{ message.sender.last_name }}
+                </div>
+                <div class="message_content-other flex-center">{{ message.message }}
+                </div>
+                <div class="message_time-other flex-center">{{ message.sent_time_12 }}
+                </div>
+            </div>
+
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    </div>
+
+    <form id="send_message_form">
+        <div class="message_sending_area flex-center">
+            <input type="text" id="send_message_form-inp" class="send_message_input" placeholder="Type here">
+            <label class="setting-btn" for="message_file_selector">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill=#495057
+                        d="M11.5 22q-2.3 0-3.9-1.6T6 16.5V6q0-1.65 1.175-2.825T10 2q1.65 0 2.825 1.175T14 6v8h-1.5V6q0-1.05-.725-1.775T10 3.5q-1.05 0-1.775.725T7.5 6v10.5q0 1.65 1.175 2.825T11.5 20.5q.725 0 1.363-.238T14 19.6v1.8q-.575.275-1.2.438T11.5 22Zm4.5-4h-2q-.425 0-.712-.288T13 17q0-.425.288-.712T14 16h2v-2q0-.425.288-.712T17 13q.425 0 .713.288T18 14v2h2q.425 0 .713.288T21 17q0 .425-.288.713T20 18h-2v2q0 .425-.288.713T17 21q-.425 0-.712-.288T16 20v-2Zm-4.5-1.5V18q-1.05 0-1.775-.725T9 15.5V6.75q0-.325.213-.537T9.75 6q.325 0 .538.213t.212.537v8.75q0 .425.288.713t.712.287Zm4-5.5V6.75q0-.325.213-.537T16.25 6q.325 0 .538.213T17 6.75V11h-1.5Z" />
+                </svg>
+
+            </label>
+            <input type="file" name="message_file_selector" id="message_file_selector">
+
+
+            <button type="submit" id="send_message_submitbtn" class="setting-btn-filled"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
+                    <path
+                        d="M32 272l128 48 16 160 80-112 112 112L480 32 32 272zm318.7 145.4L256 320l128-176-192 153.8-82.6-31 322-172.5-80.7 323.1z"
+                        fill="#fff" />
+                </svg></button>
+
+        </div>
+    </form>
+    <script src="{% static 'js/chat.js' %}"></script>
+    <script src="{% static 'js/chatfilesend.js' %}"></script>
+    <script>
+            let crbtn = document.querySelector('#crbtn')
+            let sidth = parent.screen.width
+            console.log(sidth)
+            if(sidth < 1000){
+                crbtn.classList.remove('btn-disnone')
+            }
+            else if(sidth > 1000){
+                crbtn.classList.add('btn-disnone');
+            }
+            
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .profile-form-holder-holder {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index:1000;
+        }
+
+        .profile-form-holder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #e7e7f8;
+            min-width: 350px;
+        }
+
+        .profile-form {
+            background: #d5d5f8;
+            border-radius: 15px;
+            padding: 3vw;
+        }
+
+        .profile-form-header {
+            text-align: center;
+            margin-bottom: 1.5vw;
+        }
+
+        .profile-form-header h1 {
+            margin: 0 auto;
+            color: #26184a;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        .profile-input-container {
+            margin-bottom: 0.5vw;
+        }
+
+        .profile-input-container label {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #0B0910;
+        }
+
+        .profile-form-input {
+            border-radius: 5px;
+            box-shadow: 0 0 10px #7D4EF5;
+            padding: 0.5vw 1vw;
+            font-size: 1.2rem;
+            color: #331971;
+            margin-bottom: 0.5vw;
+            width: 100%;
+            min-width: 300px;
+        }
+
+        @media only screen and (max-width:1000px) {
+            .profile-input-container {
+                margin-bottom: 3vw;
+            }
+
+            .profile-form-input {
+                min-width: 200px;
+                padding: 1.5vw 3vw;
+            }
+        }
+
+        @media only screen and (max-width:500px) {
+            .profile-form-input {
+                min-width: 200px;
+                padding: 2vw 4vw;
+            }
+
+            .profile-input-container {
+                margin-bottom: 5vw;
+            }
+        }
+
+        .profile-avatar-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-avatar {
+            width: 90px;
+            height:90px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1vw;
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-avatar-input {
+            width: 100%;
+            padding: 0.5vw 1vw;
+            font-size: 1.2rem;
+            color: #331971;
+            border-radius: 5px;
+            border: 1px solid #7D4EF5;
+        }
+
+        .profile-form-footer {
+            justify-content: flex-start !important;
+            margin-left: 2px;
+        }
+
+        .profile-form-footer p,
+        .profile-form-footer a {
+            font-size: 0.6rem;
+        }
+
+        .profile-form-footer-2 {
+            margin-top: 3px;
+            justify-content: flex-end !important;
+            margin-right: 2px;
+        }
+
+        .profile-form-footer-2 a {
+            font-size: 0.85rem;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile-form-holder-holder">
+        <div class="profile-form-holder">
+            <form class="profile-form" method="POST">
+                {% csrf_token %}
+                <div class="profile-form-header">
+                    <h1>User Profile</h1>
+                </div>
+
+                <div class="profile-input-container profile-avatar-container">
+                    <label for="profile-avatar" style="cursor:pointer;">
+                        <div class="profile-avatar">
+                            {% if avatar %}
+                            <img src="{{avatar.url}}" alt="User Avatar">
+                            {% else %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 24 24">
+                                <path fill="#888888"
+                                    d="M12 18q2.075 0 3.538-1.462Q17 15.075 17 13q0-2.075-1.462-3.538Q14.075 8 12 8Q9.925 8 8.463 9.462Q7 10.925 7 13q0 2.075 1.463 3.538Q9.925 18 12 18Zm0-2q-1.25 0-2.125-.875T9 13q0-1.25.875-2.125T12 10q1.25 0 2.125.875T15 13q0 1.25-.875 2.125T12 16Zm6-6q.425 0 .712-.288Q19 9.425 19 9t-.288-.713Q18.425 8 18 8t-.712.287Q17 8.575 17 9t.288.712Q17.575 10 18 10ZM4 21q-.825 0-1.412-.587Q2 19.825 2 19V7q0-.825.588-1.412Q3.175 5 4 5h3.15L8.7 3.325q.15-.15.337-.238Q9.225 3 9.425 3h5.15q.2 0 .388.087q.187.088.337.238L16.85 5H20q.825 0 1.413.588Q22 6.175 22 7v12q0 .825-.587 1.413Q20.825 21 20 21Z" />
+                            </svg>
+                            {% endif %}
+                        </div>
+                    </label>
+                    <input type="file" id="profile-avatar" name="avatarfile" class="profile-avatar-input" accept="image/*" style="width:0px;height:0px; position:absolute;right:10000px">
+                    <script>
+                        let profileAvatar = document.querySelector('.profile-avatar');
+                        let avatarInput = document.querySelector('.profile-avatar-input');
+                        avatarInput.addEventListener('change', () => {
+                            let fileSource = URL.createObjectURL(avatarInput.files[0]);
+                            profileAvatar.innerHTML = `<img src='${fileSource}' alt='user avatar'>`;
+                        });
+                    </script>
+                </div>
+                
+                <div class="profile-input-container">
+                    <label for="profile-first-name">First Name</label>
+                    <input type="text" id="profile-first-name" name="firstname" class="profile-form-input" placeholder="Enter First Name" value="{{firstname}}"required>
+                </div>
+                
+                <div class="profile-input-container">
+                    <label for="profile-last-name">Last Name</label>
+                    <input type="text" id="profile-last-name" name="lastname" class="profile-form-input" placeholder="Enter Last Name" value="{{lastname}}"required>
+                </div>
+                
+                <div class="profile-input-container">
+                    <label for="profile-bio">Bio</label>
+                    <textarea id="profile-bio" name="bio" class="profile-form-input" placeholder="Enter Bio" rows="4" required>{{ bio }}</textarea>
+                </div>
+                
+                <div class="profile-form-footer">
+                    <button type="submit" style=" background-color: #7D4EF5;
+                color: white;
+                border-radius: 15px;
+                cursor: pointer;
+                border: 0px;
+                padding-right: clamp(15px, 3vw, 50px);
+                padding-left: clamp(15px, 3vw, 50px);
+                padding-top: clamp(15px, 1vw, 50px);
+                padding-bottom: clamp(15px, 1vw, 50px);
+                width:100%">Submit</button>
+                </div>
+                <div class="profile-form-footer">
+                    <button type="button" style=" padding-right: clamp(15px, 3vw, 50px);
+                padding-left: clamp(15px, 3vw, 50px);
+                padding-top: clamp(15px, 1vw, 50px);
+                padding-bottom: clamp(15px, 1vw, 50px);
+                border-radius: 15px;
+                color: #7D4EF5;
+                border: 1px solid #7D4EF5;
+                cursor: pointer;
+                margin:15px 0 ;
+                width:100%">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

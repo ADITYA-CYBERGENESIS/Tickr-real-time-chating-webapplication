@@ -1,0 +1,113 @@
+/* footer */
+
+footer{
+    -webkit-box-shadow: 0 0 22px #A489EA;
+            box-shadow: 0 0 22px #A489EA;
+    background:#7D4EF5;
+    color:#EAE6F3;
+    padding: 3vw 0;
+}
+.footer{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow: hidden;
+    /* height: 300px; */
+    margin: 3vw;
+}
+.footer_tagline{
+    color:#eae6f3e0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    max-width: 300px;
+    margin-top:3vh;
+
+}
+.footer_hr-1{
+    display: none;
+    border: 2px solid #19094267 ;
+}
+.footer_hr-2{
+    border: 2px solid #19094267 ;
+}
+.footer_middle_line{
+    height: 250px;
+    width: 3px;
+    background-color:#19094267;
+    margin:0 3vw;
+}
+.footer_section-2{
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+gap: 8vw;
+-ms-flex-pack: distribute;
+    justify-content: space-around;
+font-size: 1.2rem;
+    font-weight: 500;
+
+}
+.footer_nav_items{
+    cursor: pointer;
+}
+.lets_connect{
+    margin-right: 6vw;
+  
+}
+.tickr a , .legal_hub a , .lets_connect a{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color:#eae6f3e0;
+}
+.tickr h6 , .legal_hub h6 , .lets_connect h6{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color:#461AB8;
+    margin-bottom: 2vw;
+
+}
+.copyright_strip{
+    margin-top: 3vw;
+    
+}
+.copyright_strip p{
+    text-align: center;
+    color: #EAE6F3;
+    opacity: 80%;
+}
+@media only screen and (max-width: 900px) {
+    .footer{
+        display: block;
+    }
+    .footer_middle_line{
+        display: none;
+    }
+    .footer_hr-1{
+        display: block;
+        margin: 3vw 0;
+    }
+    footer{
+        padding: 6vw 0;
+    }
+}
+@media only screen and (max-width:475px){
+    .footer_section-2{
+        display: block;
+    }
+    .tickr , .legal_hub, .lets_connect{
+        margin-bottom:3vw ;
+    }
+}
+
+/* footer end */
+
+
+
+
+
